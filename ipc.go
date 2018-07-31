@@ -17,6 +17,7 @@ func main() {
 
 	if err != nil {
 		fmt.Printf("Error: %s", err)
+		os.Exit(1)
 	}
 
 	addrs, err := intr.Addrs()
@@ -38,6 +39,6 @@ func main() {
 
 	if !printed {
 		fmt.Fprintln(os.Stderr, "No ip found on", iName)
-		os.Exit(1)
+		os.Exit(0)
 	}
 }
